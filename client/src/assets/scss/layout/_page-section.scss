@@ -1,0 +1,13 @@
+.page {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  &__info {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  &__list {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}

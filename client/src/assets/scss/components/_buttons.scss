@@ -1,0 +1,21 @@
+.create-button {
+  position: fixed;
+  right: 100px;
+  bottom: 50px;
+  & i {
+    color: blue;
+  }
+}
+.import-button {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  & i {
+    color: blue;
+  }
+}
+.fa-button {
+  .fa{
+    padding-right: 8px;
+  }
+}

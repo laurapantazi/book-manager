@@ -1,0 +1,32 @@
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+// Bootstrap Required
+@import '~bootstrap/scss/functions',
+        '~bootstrap/scss/variables',
+        '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/bootstrap.scss';
+
+// Bootstrap Optional
+@import '~bootstrap/scss/buttons',
+        '~bootstrap/scss/dropdown',
+        '~bootstrap/scss/forms',
+        '~bootstrap/scss/navbar',
+        '~bootstrap/scss/input-group',
+        '~bootstrap/scss/pagination',
+        '~bootstrap/scss/reboot',
+        '~bootstrap/scss/tables';
+
+@import './abstract/variables';
+
+@import './base/base';
+
+@import './components/dropdown',
+        './components/buttons',
+        './components/table',
+        './components/pagination',
+        './components/checkbox';
+
+@import './layout/header',
+        './layout/page-section';
+

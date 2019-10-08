@@ -1,0 +1,44 @@
+$checkbox: $light-grey;
+$checkmark: $blue;
+
+.checkbox {
+  &__input {
+    opacity: 0;
+  }
+  &__label {
+    position: relative;
+    display: inline-block;
+    padding-left: 22px;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;      
+      display: inline-block;
+    }
+
+    // checkbox square
+    &::before{
+      height: 18px; //16px
+      width: 18px;
+      border: 1px solid $checkbox;
+      border-radius: 0.25rem;
+      left: 0px;
+      top: -5px;
+    }
+    // checkmark
+    &::after {
+      content: none;
+      height: 6px;
+      width: 10px;
+      border-left: 2px solid $checkmark;
+      border-bottom: 2px solid $checkmark;  
+      transform: rotate(-45deg);  
+      left: 4px;
+      top: 0px;
+    }
+  }
+  // checkmark visible
+  &__input:checked + &__label::after{
+    content: '';
+  }
+}
