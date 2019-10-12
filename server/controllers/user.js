@@ -44,6 +44,12 @@ const UserController = {
               })
             }
           })
+          .catch(error => {
+            return res.status(500).send({
+              error: true,
+              message: `Incorrect username or password ${error.message}`
+            })
+          })
         }
       })
       .catch(error => {

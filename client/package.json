@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "webpack-dev-server --config build/webpack.config.dev.js  --mode development --hot --open",
+    "dev": "webpack-dev-server --config build/webpack.config.dev.js --hot --open",
     "start": "npm run dev",
-    "build": "webpack --config build/webpack.config.prod.js --mode production"
+    "build": "webpack --config build/webpack.config.prod.js"
   },
   "author": "Laura Pantazi",
   "license": "ISC",
@@ -29,7 +29,8 @@
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",
     "vue-template-compiler": "^2.6.10",
-    "vuex": "^3.1.1"
+    "vuex": "^3.1.1",
+    "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

@@ -1,4 +1,4 @@
-# Vue Project
+# Vue Project (In Progress)
 This project is build with Vue.js, Express, Node.js and MySQL.
 
 ## Prerequisites
