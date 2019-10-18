@@ -1,7 +1,7 @@
 <template>
   <div class="checkbox">
-    <input type="checkbox" class="checkbox__input" id="checkbox" name="inputName">
-    <label class="checkbox__label" for="checkbox">{{label}}</label>
+    <input type="checkbox" class="checkbox__input" :id="`checkbox-${keyId}`" name="name">
+    <label class="checkbox__label" :for="`checkbox-${keyId}`">{{value}}</label>
   </div>
 </template>
 
@@ -10,10 +10,14 @@ import { ENDPOINT } from '../../config/index'
   export default {
     name: 'Checkbox',
     props: {
-      label: '',
-      inputName: ''
+      name: '',
+      keyId: '',
+      value: ''
     },
-    methods: {
-   }
+    data () {
+      return {
+        value: this.checked
+      }
+    },
   }
 </script>

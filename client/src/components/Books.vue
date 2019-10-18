@@ -16,7 +16,7 @@
   </section>
 
   <section class="search">
-    <div :style="{visibility: [showFiltersFlag ? 'visible' : 'hidden']}">
+    <div v-show="showFiltersFlag">
       <form>
         <div class="form-row">
           <div class="form-group col-md-4">
@@ -55,9 +55,7 @@
       <table class="table">
         <thead class="table-head">
           <tr>
-            <th scope="col">
-             <checkbox :inputName="0"></checkbox>
-            </th>
+            <th scope="col">Favourite</th>
             <th scope="col">Title</th>
             <th scope="col">Author</th>
             <th scope="col">Country</th>
@@ -69,7 +67,7 @@
         <tbody class="table-body">
           <tr v-for="data of books" :key="data.book_id">
             <th scope="col">
-              <checkbox :inputName="data.book_id" :key="data.book_id"></checkbox>
+              <checkbox :idKey="data.book_id" :name="data.book_id"></checkbox>
             </th>
             <td class="table-body__title">{{data.title}}</td>
             <td>{{data.author}}</td>
@@ -104,8 +102,8 @@
 <script>
   import { ENDPOINT } from '../config/index'
   import {debounce} from 'lodash'
-  export default{
-    data(){
+  export default {
+    data() {
       return{
         books: {},
         offset: 0,
@@ -118,7 +116,8 @@
         resultsPerPage: 5,
         search: {},
         showFiltersFlag: false,
-        navigationPages: []
+        navigationPages: [],
+        checked: []
       }
   },
   mounted () {
@@ -128,6 +127,7 @@
       this.$axios.post(ENDPOINT + 'books/paginate/count', {offset: this.offset, limit: this.limit})
       .then(response => {
         this.books = response.data.books
+        this.checked = response.data.books
         this.totalBooks = response.data.count
         this.totalPages = Math.ceil(this.totalBooks / this.limit)
         if (this.totalBooks < 5) this.resultsPerPage = this.totalBooks
@@ -227,6 +227,11 @@
         else this.pagesFilter = this.totalPages
       }
     }
-  }
+  },
+  // computed: {
+  //   'data.checked'() {
+  //     console.log('')
+  //   }
+  // }
 }
 </script>
