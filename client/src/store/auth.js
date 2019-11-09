@@ -1,5 +1,5 @@
-import router from '../router'
-import { ENDPOINT } from '../config/index'
+import router from '@/router'
+import { ENDPOINT } from '@/config/index'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 

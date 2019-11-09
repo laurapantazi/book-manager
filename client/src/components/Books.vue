@@ -100,7 +100,7 @@
 </template>
 
 <script>
-  import { ENDPOINT } from '../config/index'
+  import { ENDPOINT } from '@/config/index'
   import {debounce} from 'lodash'
   export default {
     data() {

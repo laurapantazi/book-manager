@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import { ENDPOINT } from '../config/index'
+  import { ENDPOINT } from '@/config/index'
   export default{
     data() {
         return {

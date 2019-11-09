@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../components/Login.vue'
-import Register from '../components/Register.vue'
-import Books from '../components/Books.vue'
-import CreateBook from '../components/CreateBook.vue'
-import ImportBooks from '../components/ImportBooks.vue'
-import Home from '../components/Home.vue'
+import Login from '@/components/Login.vue'
+import Register from '@/components/Register.vue'
+import Books from '@/components/Books.vue'
+import CreateBook from '@/components/CreateBook.vue'
+import ImportBooks from '@/components/ImportBooks.vue'
+import Home from '@/components/Home.vue'
 import Cookies from 'js-cookie'
 
 Vue.use(VueRouter)
