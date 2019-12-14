@@ -1,7 +1,7 @@
 import Checkbox from './Checkbox.vue'
 
 const components = {
-    Checkbox
+  Checkbox
 }
 
 export default components

@@ -14,14 +14,10 @@
 
 <script>
 import { ENDPOINT } from '@/config/index'
-  export default {
-    methods: {
-      onSelect() {
-
-      },
-      onSubmit () {
-        
-      }
-    }
+export default {
+  methods: {
+    onSelect() {},
+    onSubmit() {}
   }
+}
 </script>

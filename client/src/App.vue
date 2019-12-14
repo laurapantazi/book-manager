@@ -9,7 +9,7 @@
         <div class="navbar-nav">
           <router-link to="/books" class="nav-item nav-link">Books</router-link>
         </div>
-        <div v-if="!isLoggedIn" class="navbar-nav navbar-right ml-auto">			
+        <div v-if="!isLoggedIn" class="navbar-nav navbar-right ml-auto">
           <router-link to="/login" class="nav-item nav-link">Login</router-link>
           <router-link to="/register" class="nav-item nav-link">Register</router-link>
         </div>
@@ -23,33 +23,31 @@
     </div>
 
     <div class="create-button">
-    <router-link :to="{ name: 'AddBook'}">
-      <i class="fa fa-2x fa-plus-circle"></i>
-    </router-link>
-  </div>
-  <div class="import-button">
-    <router-link :to="{ name: 'ImportBooks'}">
-      <i class="fa fa-2x fa-upload" aria-hidden="true"></i>
-    </router-link>
-  </div>
-  
+      <router-link :to="{ name: 'AddBook' }">
+        <i class="fa fa-2x fa-plus-circle"></i>
+      </router-link>
+    </div>
+    <div class="import-button">
+      <router-link :to="{ name: 'ImportBooks' }">
+        <i class="fa fa-2x fa-upload" aria-hidden="true"></i>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
-  export default {
-    methods: {
-      logout() {
-        this.$store.dispatch('auth/logout')
-        .then(() => {
-          this.$router.push('/login')
-        })
-      }
-    },
-    computed: {
-      isLoggedIn () {
-        return this.$store.getters['auth/isLoggedIn']
-      }
+export default {
+  methods: {
+    logout() {
+      this.$store.dispatch('auth/logout').then(() => {
+        this.$router.push('/login')
+      })
+    }
+  },
+  computed: {
+    isLoggedIn() {
+      return this.$store.getters['auth/isLoggedIn']
     }
   }
+}
 </script>

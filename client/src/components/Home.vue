@@ -1,5 +1,4 @@
-<style lang="scss">
-</style>
+<style lang="scss"></style>
 
 <template>
   <div>
@@ -9,6 +8,5 @@
 
 <script>
 import { ENDPOINT } from '@/config/index'
-export default{
-}
+export default {}
 </script>

@@ -10,7 +10,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@':  path.resolve(__dirname, '../src'),
+      '@': path.resolve(__dirname, '../src')
     }
   },
   devServer: {
@@ -19,9 +19,19 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
         test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          emitWarning: true
+        }
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {compact: true}
+        query: { compact: true }
       },
       {
         test: /\.vue$/,
@@ -30,10 +40,10 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
-        {
-          loader: 'file-loader',
-          options: { name: '[path][name].[ext]'}
-        }
+          {
+            loader: 'file-loader',
+            options: { name: '[path][name].[ext]' }
+          }
         ]
       },
       {
@@ -44,11 +54,8 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: function () {
-                return [
-                  require('precss'),
-                  require('autoprefixer')
-                ]
+              plugins: function() {
+                return [require('precss'), require('autoprefixer')]
               }
             }
           },

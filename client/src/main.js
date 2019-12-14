@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from  './router/index.js'
+import router from './router/index.js'
 import axios from 'axios'
 import store from './store'
 import 'bootstrap'
@@ -14,13 +14,13 @@ Vue.prototype.$swal = Swal
 Vue.prototype.$store = store
 Vue.prototype.$cookie = Cookies
 
-for (name in components) {
-    Vue.component(name, components[name])
+for (let name in components) {
+  Vue.component(name, components[name])
 }
 
 new Vue({
-    el: '#app',
-    render: h => h(App),
-    router,
-    store
+  el: '#app',
+  render: h => h(App),
+  router,
+  store
 })

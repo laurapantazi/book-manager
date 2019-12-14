@@ -9,7 +9,7 @@ const state = {
   user: {}
 }
 const getters = {
-  isLoggedIn (state) {
+  isLoggedIn(state) {
     return !!state.token
   }
 }
@@ -34,27 +34,26 @@ const mutations = {
   }
 }
 const actions = {
-  async login ({commit}, user) {
+  async login({ commit }, user) {
     commit('auth_request')
     try {
-      let {data} = await axios.post(ENDPOINT + 'users/login', user)
+      let { data } = await axios.post(ENDPOINT + 'users/login', user)
       return data
-    }
-    catch (error) {
+    } catch (error) {
       commit('auth_error')
       return error
-    }    
+    }
   },
-  logout({commit}) {
+  logout({ commit }) {
     commit('logout')
     Cookies.remove('jwt')
     delete axios.defaults.headers.common['Authorization']
     router.push('/login')
   },
-  async register({commit}, user) {
+  async register({ commit }, user) {
     commit('register')
     try {
-      let {data} = await axios.post(ENDPOINT + 'users/register', user)
+      let { data } = await axios.post(ENDPOINT + 'users/register', user)
       router.push('/login')
       return data
     } catch (error) {
