@@ -1,0 +1,21 @@
+{ 
+  "eslint.validate": [
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "javascript",
+      "autoFix": true
+    }
+  ],
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "vetur.validation.template": false,
+  "eslint.workingDirectories": [
+    "./client"
+  ],
+  "prettier.jsxBracketSameLine": true
+}
