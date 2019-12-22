@@ -14,15 +14,15 @@ export default {
   props: {
     name: {
       type: String,
-      value: ''
+      default: ''
     },
     idKey: {
-      type: Number,
-      value: 0
+      type: [Number, String],
+      default: 0
     },
     value: {
       type: String,
-      value: ''
+      default: ''
     }
   }
 }

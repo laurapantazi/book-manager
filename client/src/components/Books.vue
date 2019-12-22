@@ -64,7 +64,7 @@
           <tbody class="table-body">
             <tr v-for="data of books" :key="data.book_id">
               <th scope="col">
-                <checkbox :idKey="data.book_id" :name="data.book_id"></checkbox>
+                <checkbox :idKey="data.book_id" :name="`checkbox-${data.book_id}`"></checkbox>
               </th>
               <td class="table-body__title">{{ data.title }}</td>
               <td>{{ data.author }}</td>
