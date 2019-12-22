@@ -6,11 +6,18 @@ This project is build with Vue.js, Express, Node.js and MySQL.
   * MySQL - Download and install MySQL
 
 ## Features
+* Login/Logout/Register implementation
+* JWT Authentication
+* Setup for custom re-usable elements as components 
+* Pagination with dynamic number of results per page
+* Filter search based on 4 different inputs
 
 **Server-side**
 * [x] Node.js
 * [x] Express
 * [x] Sequelize ORM
+* [x] jsonwebtoken
+* [x] bcrypt
 
 **Client-side**
 * [x] Vue.js 2.x
@@ -20,6 +27,7 @@ This project is build with Vue.js, Express, Node.js and MySQL.
 * [x] Axios
 * [x] SCSS
 * [x] Babel
+* [x] ESLint and Prettier
 
 ## Functionality Overview
 
