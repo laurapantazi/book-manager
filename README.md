@@ -18,6 +18,7 @@ This project is build with Vue.js, Express, Node.js and MySQL.
 * [x] Sequelize ORM
 * [x] jsonwebtoken
 * [x] bcrypt
+* [x] cookie-parser
 
 **Client-side**
 * [x] Vue.js 2.x

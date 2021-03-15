@@ -1,11 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '@/components/Login.vue'
-import Register from '@/components/Register.vue'
-import Books from '@/components/Books.vue'
-import CreateBook from '@/components/CreateBook.vue'
-import ImportBooks from '@/components/ImportBooks.vue'
-import Home from '@/components/Home.vue'
+import Login from '@/views/Login.vue'
+import Register from '@/views/Register.vue'
+import Home from '@/views/Home.vue'
 import Cookies from 'js-cookie'
 
 Vue.use(VueRouter)
@@ -14,51 +11,54 @@ const routes = [
   {
     name: 'Home',
     path: '/',
-    component: Home
+    component: Home,
   },
   {
     name: 'Login',
     path: '/login',
-    component: Login
+    component: Login,
   },
   {
     name: 'Register',
     path: '/register',
-    component: Register
+    component: Register,
   },
   {
     name: 'ShowBooks',
     path: '/books',
-    component: Books,
+    component: () =>
+      import(/* webpackChunkName: "books" */ '@/views/Books.vue'),
     meta: {
-      requiresAuth: true
-    }
+      requiresAuth: true,
+    },
   },
   {
     name: 'AddBook',
     path: '/books/add',
-    component: CreateBook,
+    component: () =>
+      import(/* webpackChunkName: "books" */ '@/views/CreateBook.vue'),
     meta: {
-      requiresAuth: true
-    }
+      requiresAuth: true,
+    },
   },
   {
     name: 'ImportBooks',
     path: '/books/import',
-    component: ImportBooks,
+    component: () =>
+      import(/* webpackChunkName: "books" */ '@/views/ImportBooks.vue'),
     meta: {
-      requiresAuth: true
-    }
+      requiresAuth: true,
+    },
   },
   {
     path: '*',
-    redirect: '/'
-  }
+    redirect: '/',
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
-  routes
+  routes,
 })
 
 router.beforeEach((to, from, next) => {
@@ -68,7 +68,7 @@ router.beforeEach((to, from, next) => {
       return next()
     } else {
       return next({
-        path: '/login'
+        name: 'Login',
       })
     }
   }

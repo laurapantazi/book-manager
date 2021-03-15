@@ -72,7 +72,7 @@
               <td>{{ data.language }}</td>
               <td>{{ data.year }}</td>
               <td>{{ data.pages }}</td>
-            </tr>
+            </tr>            
           </tbody>
         </table>
       </div>
@@ -242,10 +242,5 @@ export default {
       }
     }
   }
-  // computed: {
-  //   'data.checked'() {
-  //     console.log('')
-  //   }
-  // }
 }
 </script>
