@@ -59,6 +59,7 @@
               <th scope="col">Language</th>
               <th scope="col">Year</th>
               <th scope="col">Pages</th>
+              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody class="table-body">
@@ -72,7 +73,8 @@
               <td>{{ data.language }}</td>
               <td>{{ data.year }}</td>
               <td>{{ data.pages }}</td>
-            </tr>            
+              <td><router-link :to="{ name: 'ShowBook', params: { id: data.book_id } }">Edit</router-link></td>              
+            </tr>
           </tbody>
         </table>
       </div>

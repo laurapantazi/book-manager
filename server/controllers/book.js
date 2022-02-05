@@ -1,7 +1,7 @@
 var BookService = require('../services/book')
 
 const BookController = {
-  createBook (req, res) {
+  createBook(req, res) {
     let book = {
       title: req.body.title,
       author: req.body.author,
@@ -11,87 +11,90 @@ const BookController = {
       year: req.body.year
     }
     BookService.createBook(book)
-    .then(response =>{
-      return res.status(200).json({
-        error: false,
-        message: 'Successfully added new book'
+      .then(response => {
+        return res.status(200).json({
+          error: false,
+          message: 'Successfully added new book'
+        })
       })
-    })
-    .catch(error => {
-      return res.status(500).json({
-        error: true,
-        message: error.message
+      .catch(error => {
+        return res.status(500).json({
+          error: true,
+          message: error.message
+        })
       })
-    }) 
   },
-  getAllBooks (req, res) {
+  getAllBooks(req, res) {
     BookService.getAllBooks()
-    .then(books => {
-      return res.status(200).json({
-        error: false,
-        books
+      .then(books => {
+        return res.status(200).json({
+          error: false,
+          books
+        })
       })
-    })
-    .catch(error => {
-      return res.status(500).json({
-        error: true,
-        message: error.message
+      .catch(error => {
+        return res.status(500).json({
+          error: true,
+          message: error.message
+        })
       })
-    })
   },
-  getBook (req, res) {
+  getBook(req, res) {
     let book_id = req.params.id
     BookService.getBook(book_id)
-    .then(book => {
-      return res.status(200).json({
-        error: false,
-        book
+      .then(book => {
+        return res.status(200).json({
+          error: false,
+          book
+        })
       })
-    })
-    .catch(error => {
-      return res.status(500).json({
-        error: true,
-        message: error.message
+      .catch(error => {
+        return res.status(500).json({
+          error: true,
+          message: error.message
+        })
       })
-    })
   },
-  updateBook (req, res) {
+  updateBook(req, res) {
     let book_id = req.params.id
-    BookService.updateBook(book_id)
-    .then(book => {
-      return res.status(200).json({
-        error: false,
-        book
+    let book = {
+      ...req.body
+    }
+    BookService.updateBook(book_id, book)
+      .then(book => {
+        return res.status(200).json({
+          error: false,
+          book
+        })
       })
-    })
-    .catch(error => {
-      return res.status(500).json({
-        error: true,
-        message: error.message
+      .catch(error => {
+        return res.status(500).json({
+          error: true,
+          message: error.message
+        })
       })
-    })
   },
-  paginate (req, res) {
-    let {offset, limit} = req.body
-    BookService.paginate({offset, limit})
-    .then(books => {
-      return res.status(200).json({
-        error: false,
-        books
+  paginate(req, res) {
+    let { offset, limit } = req.body
+    BookService.paginate({ offset, limit })
+      .then(books => {
+        return res.status(200).json({
+          error: false,
+          books
+        })
       })
-    })
-    .catch(error => {
-      return res.status(500).json({
-        error: true,
-        message: error.message
+      .catch(error => {
+        return res.status(500).json({
+          error: true,
+          message: error.message
+        })
       })
-    })
   },
-  paginateAndCount (req, res) {
-    let {offset, limit} = req.body
-    BookService.paginateAndCount({offset, limit})
+  paginateAndCount(req, res) {
+    let { offset, limit } = req.body
+    BookService.paginateAndCount({ offset, limit })
       .then(response => {
-        let {rows, count} = response
+        let { rows, count } = response
         return res.status(200).json({
           error: false,
           books: rows,
@@ -105,24 +108,24 @@ const BookController = {
         })
       })
   },
-  searchPaginate (req, res) {
-    let {offset, limit, search_array} = req.body
+  searchPaginate(req, res) {
+    let { offset, limit, search_array } = req.body
     BookService.searchPaginate(offset, limit, search_array)
-    .then(books => {
-      return res.status(200).json({
-        error: false,
-        books
+      .then(books => {
+        return res.status(200).json({
+          error: false,
+          books
+        })
       })
-    })
-    .catch(error => {
-      return res.status(500).json({
-        error: true,
-        message: error.message
+      .catch(error => {
+        return res.status(500).json({
+          error: true,
+          message: error.message
+        })
       })
-    })
   },
-  searchPaginateAndCount (req, res) {
-    let {offset, limit, search_array} = req.body
+  searchPaginateAndCount(req, res) {
+    let { offset, limit, search_array } = req.body
     BookService.searchPaginateAndCount(offset, limit, search_array)
       .then(response => {
         return res.status(200).json({

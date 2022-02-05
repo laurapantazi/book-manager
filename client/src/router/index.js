@@ -33,6 +33,15 @@ const routes = [
     },
   },
   {
+    name: 'ShowBook',
+    path: '/books/:id',
+    component: () =>
+      import(/* webpackChunkName: "books" */ '@/views/Book.vue'),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
     name: 'AddBook',
     path: '/books/add',
     component: () =>
