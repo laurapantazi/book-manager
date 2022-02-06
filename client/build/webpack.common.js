@@ -28,10 +28,14 @@ module.exports = {
         }
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: { compact: true }
+        use: {
+          loader: 'babel-loader',
+          options: {
+            plugins: ['@babel/plugin-syntax-dynamic-import'],
+          }
+        }
       },
       {
         test: /\.vue$/,
