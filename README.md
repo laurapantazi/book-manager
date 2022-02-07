@@ -25,6 +25,7 @@ This project is build with Vue.js, Express, Node.js and MySQL.
 * [x] Vuex
 * [x] Vue-router
 * [x] Webpack 4
+* [x] Storybook
 * [x] Axios
 * [x] SCSS
 * [x] Babel
