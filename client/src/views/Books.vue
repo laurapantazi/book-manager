@@ -1,4 +1,3 @@
-<style scoped lang="scss"></style>
 <template>
   <div class="books__wrapper">
     <section class="navigation-buttons">
@@ -64,7 +63,7 @@
           </thead>
           <tbody class="table-body">
             <tr v-for="data of books" :key="data.book_id">
-              <th scope="col">
+              <th scope="col" class="table-body__checkbox">
                 <checkbox :idKey="data.book_id" :name="`checkbox-${data.book_id}`"></checkbox>
               </th>
               <td class="table-body__title">{{ data.title }}</td>
@@ -246,3 +245,17 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+  .table-body {
+    &__checkbox{
+      padding: 0 12px !important;
+      & > div.checkbox {
+        height: 50px;
+      }
+      & > div.checkbox ::v-deep input.checkbox__input {
+        margin-top: 13px;
+      }
+    }
+  }
+</style>
